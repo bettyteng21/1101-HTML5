@@ -1,0 +1,149 @@
+<!DOCTYPE html> 
+<html>
+
+<head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <script type="text/javascript">		
+      
+		// 取得網址裡的參數 
+		function GetUrlVar(VarName) {
+		  name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+		  var regexS = "[\\?&]" + VarName + "=([^&#]*)";
+		  var regex = new RegExp(regexS);
+		  var results = regex.exec(window.location.href);
+		  if (results == null)
+		   	 return "";
+		  else
+			 return results[1];
+		}		
+    </script>
+  
+    <style>
+      
+      body {
+        /*background-image: url('https://i.imgur.com/NdKxBMl.jpg');*/
+        background: #f5f5f5
+      }
+      
+      .myImage {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 50%;
+          position: relative;
+          top: 15px;       
+       }
+      
+      iframe {
+          margin: 0 auto;
+          display:block;
+      }
+      
+      .card-panel{
+        text-align: center;
+      }
+    </style>
+</head> 
+
+<body> 
+	<div id="demo">
+      <!--下面的output會寫到這-->
+	</div>
+  
+	<script>
+        var X = decodeURIComponent(GetUrlVar('id'));
+		var i=Number(X);
+		var text="";
+      
+		const picture = ["https://i.imgur.com/s7d2Yah.jpg", 
+                         "https://i.imgur.com/ItdwUsg.jpg", 
+                         "https://i.imgur.com/s7VuAMF.jpg", 
+                         "https://i.imgur.com/3V7lzeb.jpg",
+                         "https://i.imgur.com/rAX0gFK.jpg",
+                         "https://i.imgur.com/FaMCkws.jpg",        
+                         "https://i.imgur.com/cydhcUn.jpg",
+                         "https://i.imgur.com/2x7ZAKE.jpg",
+                         "https://i.imgur.com/QAB7uCO.jpg",
+                         "https://i.imgur.com/WkAQPoL.jpg"];
+      
+         const title = ["周生如故", "親愛的熱愛的", "山河令", "你是我的榮耀", "原來我很愛你",
+                        "錦衣之下", "致我們單純的小美好", "你是我的城池營壘", "以家人之名", "從結婚開始戀愛"];
+      
+         const trailer = ["https://www.youtube.com/embed/qmWacAqPesk",
+                          "https://www.youtube.com/embed/D5O_9RiOhJg",
+                          "https://www.youtube.com/embed/niMpltzdG4k",
+                          "https://www.youtube.com/embed/xBKoEQs28Xo",
+                          "https://www.youtube.com/embed/kpzBrKEAN8o",
+                          "https://www.youtube.com/embed/z5HCkoVxups",
+                          "https://www.youtube.com/embed/DGsNpCgCP6Q",
+                          "https://www.youtube.com/embed/VoC-f26_6tw",
+                          "https://www.youtube.com/embed/LMReWwqD9_c",
+                          "https://www.youtube.com/embed/2NyPILw0iF8"]; 
+         
+         //////navbar//////
+         text +='<nav>';
+         text +=' <div class="nav-wrapper indigo lighten-2">';
+         text +='  <a href="#" class="brand-logo center">'+title[i]+'</a>';
+         text +='  <ul id="nav-mobile" class="left hide-on-med-and-down">';
+         text +='   <li><a href="index.html" target="_blank">上一頁</a></li>';
+         text +='  </ul>';
+         text +=' </div>';
+         text +='</nav>';
+      
+         //////image//////
+         text += "<img src= '"+picture[i]+"' class='myImage' width:'500' height:'600'>";
+      
+         //////introduction + trailer//////
+         text += '<div>';
+         text += '  <p class="card-panel indigo lighten-5 col s12 flow-text">I am Flow Text</p>';
+         text += '</div>';
+         text += '<iframe width="420" height="315" src="'+trailer[i]+'" title="YouTube video player" frameborder="0" allow="accelerometer;';
+         text += 'autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+   
+      
+         ///////footer//////
+         text +='<footer class="page-footer indigo lighten-2">';
+         text +=' <div class="container">';
+         text +='   <div class="row">';
+         text +='     <div class="col l6 s12">';
+         text +='       <h5 class="white-text">我的陸劇收藏</h5>';
+         text +='       <p class="grey-text text-lighten-4">今年入坑陸劇 目前我認為值得一看得好劇們</p>';
+         text +='     </div>';
+         text +='     <div>';
+         text +='        <img src="http://img.qutingting.com/202108/20/1049322911313.jpg" width="200" height="200" style="float:right" />';
+         text +='     </div>';
+         text +='     <div class="col l4 offset-l2 s12">';
+         text +='       <h5 class="white-text">相關觀看連結</h5>';
+         text +='        <ul>';
+         text +='         <li><a class="grey-text text-lighten-3" href="https://movie.douban.com/" target="_blank">大陸豆瓣評分</a></li>';
+         text +='         <li><a class="grey-text text-lighten-3" href="https://www.iq.com/" target="_blank">愛奇藝官網</a></li>';
+         text +='         <li><a class="grey-text text-lighten-3" href="https://v.qq.com/tv" target="_blank">騰訊官網</a></li>';
+         text +='         <li><a class="grey-text text-lighten-3" href="https://www.netflix.com/browse" target="_blank">Netflix官網</a></li>';
+         text +='        </ul>';
+         text +='     </div>';
+         text +='   </div>';
+         text +=' </div>';       
+         text +=' <div class="footer-copyright">';
+         text +='   <div class="container">';
+         text +='     © 2021 CopyNOright Text';
+         text +='   </div>';
+         text +=' </div>';
+         text +='</footer>';
+          
+      
+		  document.getElementById("demo").innerHTML = text;
+	</script>
+
+</body>
+
+</html>

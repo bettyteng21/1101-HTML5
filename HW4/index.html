@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      
+      <style>
+      body {
+        background: #eeeeee;
+      }
+      .card-content {
+        text-align: center;
+        font-weight: bold;
+        font-family: "SimHei", "FangSong", Arial, serif;
+        font-size: 20px;
+      }
+        
+      .card-image{
+        height: 400px; /* Your height here */
+        overflow: hidden;
+      }
+      
+    </style>
+    </head>
+    
+    
+    <body>
+      
+      <nav>
+        <div class="nav-wrapper indigo lighten-2">
+          <a href="#" class="brand-logo center">我的陸劇收藏</a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a href="https://www.beauty321.com/post/43831" target="_blank">播放量排行</a></li>
+            <li><a href="https://www.niusnews.com/=P2e6pu008" target="_blank">豆瓣評分排行</a></li>
+            <li><a href="#">我的韓劇收藏</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+      
+      <div class="row" id="demo">
+        <!--下面迴圈的output會寫到這-->
+      </div>
+      
+      <script>
+        var text="";
+        picture = ["https://i.imgur.com/s7d2Yah.jpg", 
+                   "https://i.imgur.com/ItdwUsg.jpg", 
+                   "https://i.imgur.com/s7VuAMF.jpg", 
+                   "https://i.imgur.com/3V7lzeb.jpg",
+                   "https://i.imgur.com/rAX0gFK.jpg",
+                   "https://i.imgur.com/FaMCkws.jpg",        
+                   "https://i.imgur.com/cydhcUn.jpg",
+                   "https://i.imgur.com/2x7ZAKE.jpg",
+                   "https://i.imgur.com/QAB7uCO.jpg",
+                  "https://i.imgur.com/WkAQPoL.jpg"];
+        title=["周生如故", "親愛的熱愛的", "山河令", "你是我的榮耀", "原來我很愛你",
+               "錦衣之下", "致我們單純的小美好", "你是我的城池營壘", "以家人之名", "從結婚開始戀愛"];
+        
+        clothes = ["",
+                   "",
+                   "",
+                   "",
+                   "",
+                   "",
+                   "",
+                   "",
+                   "", 
+                   ""];
+        
+        for (i = 0; i < picture.length; i++) {
+      
+          text += '<div class="col s12 m4 l3">';  
+          text += '  <div class="card">';
+          text += '    <div class="card-image">';
+          text += '      <img src="'+picture[i]+'" width="100%">'
+          text += '    </div>';
+		  text += '    <div class="card-content">';
+          text += '			<a class="indigo-text text-darken-3" href="b.html?id='+i+'" target="_blank">'+title[i]+'</a>';
+		  text += '	   </div>';
+          text += '  </div>';
+          text += '</div>';
+        }
+     
+        document.getElementById("demo").innerHTML = text;
+      </script>
+  
+      <footer class="page-footer indigo lighten-2">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">我的陸劇收藏</h5>
+                <p class="grey-text text-lighten-4">今年入坑陸劇 目前我認為值得一看得好劇們</p>
+              </div>
+              <div>
+                 <img src="http://img.qutingting.com/202108/20/1049322911313.jpg" width="200" height="200" style="float:right" />
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">相關觀看連結</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://movie.douban.com/" target="_blank">大陸豆瓣評分</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.iq.com/" target="_blank">愛奇藝官網</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://v.qq.com/tv" target="_blank">騰訊官網</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.netflix.com/browse" target="_blank">Netflix官網</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>       
+          <div class="footer-copyright">
+            <div class="container">
+            © 2021 CopyNOright Text
+            </div>
+          </div>
+       </footer>
+    </body>
+  </html>
