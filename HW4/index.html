@@ -14,13 +14,31 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       
       <style>
+	  @font-face {
+		font-family: 'Senty Golden Bell';
+		src: url('fonts/SentyGoldenBell.eot');
+		src: url('fonts/SentyGoldenBell.eot?#iefix') format('embedded-opentype'),
+			url('fonts/SentyGoldenBell.woff2') format('woff2'),
+			url('fonts/SentyGoldenBell.woff') format('woff'),
+			url('fonts/SentyGoldenBell.ttf') format('truetype'),
+			url('fonts/SentyGoldenBell.svg#SentyGoldenBell') format('svg');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	  }
+
+	  
       body {
         background: #eeeeee;
+		/*font-family: "SentyGoldenBell", Arial, serif;*/
+		font-family: 'Senty Golden Bell';
       }
+	  
       .card-content {
         text-align: center;
         font-weight: bold;
-        font-family: "SimHei", "FangSong", Arial, serif;
+        /*font-family: "SentyGoldenBell", Arial, serif;*/
+		font-family: 'Senty Golden Bell';
         font-size: 20px;
       }
         
@@ -28,6 +46,7 @@
         height: 400px; /* Your height here */
         overflow: hidden;
       }
+	  
       
     </style>
     </head>
