@@ -14,6 +14,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       
         <style>
+           /*import我自己上傳的字體*/
       	  @font-face {
         		font-family: 'Senty Golden Bell';
         		src: url('fonts/SentyGoldenBell.eot');
@@ -26,33 +27,30 @@
         		font-style: normal;
         		font-display: swap;
       	  }
-
   	  
           body {
               background: #eeeeee;
-          		/*font-family: "SentyGoldenBell", Arial, serif;*/
           		font-family: Arial, 'Senty Golden Bell', serif;
           }
   	  
           .card-content {
             text-align: center;
             font-weight: bold;
-            vackground:  #e8eaf6;
-    		    font-family: Arial, 'Senty Golden Bell', serif;
+            background:  #e8eaf6;
             font-size: 20px;
           }
           
           .card-image{
-            height: 400px; /* Your height here */
+            background:  #e8eaf6;
+            height: 400px; /*固定圖片大小*/
             overflow: hidden;
-          }
-  	      
+          }  	      
       </style>
     </head>
     
-    
     <body>
-      
+
+      <!--navbar-->      
       <nav>
         <div class="nav-wrapper indigo lighten-2">
           <a href="#" class="brand-logo center">我的好劇收藏</a>
@@ -63,39 +61,37 @@
         </div>
       </nav>
       
-      
       <div class="row" id="demo">
         <!--下面迴圈的output會寫到這-->
       </div>
       
       <script>
         var text="";
-        picture = ["https://i.imgur.com/s7d2Yah.jpg", 
-                   "https://i.imgur.com/kFqmkE6.jpg", 
-                   "https://i.imgur.com/s7VuAMF.jpg", 
-                   "https://i.imgur.com/n2oFBre.png",
-                   "https://i.imgur.com/znYcrOa.jpg",
-                   "https://i.imgur.com/FaMCkws.jpg",        
-                   "https://i.imgur.com/cydhcUn.jpg",
-                   "https://i.imgur.com/2x7ZAKE.jpg",
-                   "https://i.imgur.com/QAB7uCO.jpg",
-                   "https://i.imgur.com/mDXXIHe.jpg",
-                   "https://i.imgur.com/xGvKsS2.jpg",
-                   "https://i.imgur.com/Rl1Bddv.jpg"];
+        const picture = ["https://i.imgur.com/s7d2Yah.jpg", 
+                         "https://i.imgur.com/kFqmkE6.jpg", 
+                         "https://i.imgur.com/s7VuAMF.jpg", 
+                         "https://i.imgur.com/n2oFBre.png",
+                         "https://i.imgur.com/znYcrOa.jpg",
+                         "https://i.imgur.com/FaMCkws.jpg",        
+                         "https://i.imgur.com/cydhcUn.jpg",
+                         "https://i.imgur.com/2x7ZAKE.jpg",
+                         "https://i.imgur.com/QAB7uCO.jpg",
+                         "https://i.imgur.com/mDXXIHe.jpg",
+                         "https://i.imgur.com/xGvKsS2.jpg",
+                         "https://i.imgur.com/Rl1Bddv.jpg"];
                    
-        title=["周生如故", "愛上特種兵", "山河令", "如意芳菲", "致我們暖暖的小時光",
-               "錦衣之下", "致我們單純的小美好", "你是我的城池營壘", "以家人之名", "一生一世", "半是蜜糖半是傷", "變成你的那一天"];
+        const title = ["周生如故", "愛上特種兵", "山河令", "如意芳菲", "致我們暖暖的小時光",
+                       "錦衣之下", "致我們單純的小美好", "你是我的城池營壘", "以家人之名", "一生一世", "半是蜜糖半是傷", "變成你的那一天"];
 
         
-        for (i = 0; i < picture.length; i++) {
-      
+        for (i = 0; i < picture.length; i++) { 
           text += '<div class="col s12 m4 l3">';  
-          text += '  <div class="card">';
+          text += '  <div class="card hoverable">';
           text += '    <div class="card-image">';
-          text += '      <img src="'+picture[i]+'" width="100%">'
+          text += '      <a href="description.html?id='+i+'"> <img src="'+picture[i]+'" width="100%">'
           text += '    </div>';
 		      text += '    <div class="card-content indigo lighten-5">';
-          text += '			<a class="indigo-text text-darken-3" href="b.html?id='+i+'">'+title[i]+'</a>';
+          text += '			<a class="indigo-text text-darken-3" href="description.html?id='+i+'">'+title[i]+'</a>';
 		      text += '	   </div>';
           text += '  </div>';
           text += '</div>';
@@ -104,6 +100,7 @@
         document.getElementById("demo").innerHTML = text;
       </script>
   
+      <!--footer-->
       <footer class="page-footer indigo lighten-2">
           <div class="container">
             <div class="row">
@@ -129,6 +126,7 @@
             © 2021 Copy NO right Text
             </div>
           </div>
-       </footer>
+      </footer>
+
     </body>
   </html>
